@@ -1,6 +1,7 @@
 # Satellite Images Water Segmentation
 
-This project implements a **water body segmentation system** using a **fine-tuned ResNet-34 U-Net model** on multispectral (12 channels) satellite imagery.  
+This project implements a **water body segmentation system** using a **fine-tuned ResNet-34 U-Net model** on multispectral (12 channels) satellite imagery.
+The ground truth Masks that the model was trained on show **water that isn't visible on the satellite images to the human eye** like underground water as well as **visible water bodies**. 
 The model predicts water masks from multispectral `.tif` images by leveraging both spectral bands and water indices.  
 
 ---
