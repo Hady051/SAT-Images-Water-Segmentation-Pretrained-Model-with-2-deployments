@@ -59,3 +59,5 @@ An alternative deployment method is provided directly inside the Jupyter Noteboo
 
 <img width="1366" height="693" alt="Screenshot (1637)" src="https://github.com/user-attachments/assets/36fcf74f-9650-44fd-9c3f-2da7fa0c653a" />
 
+<img width="1366" height="691" alt="Screenshot (1638)" src="https://github.com/user-attachments/assets/23e0a236-f5e9-43b6-afcb-e366cce6ab65" />
+
