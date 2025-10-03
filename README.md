@@ -18,24 +18,6 @@ These metrics show that the model provides **robust segmentation quality**, dete
 
 ---
 
-## 📂 Project Structure
-'''
-water_segmentation_app/
-│
-├── app.py # Flask backend for deployment
-├── templates/
-│ └── index.html # HTML frontend
-├── static/
-│ ├── css/style.css # Custom styling
-│ ├── images/satellite_background.jpg # Landing page background
-│ ├── uploads/ # Uploaded .tif images (auto-created)
-│ └── results/ # Predicted outputs (auto-created)
-│
-├── mins.npy # Normalization (per-channel mins)
-├── maxs.npy # Normalization (per-channel maxs)
-├── best_model_val_iou_version_8.pth # ❌ Not included (95 MB, too large for repo)
-'''
-
 ⚠️ **Note:** The trained model weights file (`best_model_val_iou_version_8.pth`) is **not included** here due to size limitations (~95 MB). To run inference, you must place this file in the project root.
 
 ## Deployment Methods
