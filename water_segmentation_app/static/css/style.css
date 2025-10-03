@@ -1,0 +1,140 @@
+/* path: static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-image: url('../images/satellite_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.header-content {
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.instructions {
+    margin-top: 40px;
+    margin-bottom: 40px;   /* this was added after putting it at top to have space between it and what's below it*/
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;        /*black  */                      /* blueish #007bff */
+    color: white;                 /* yellow */                     /* white */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#file-upload {
+    display: none;   /* hide the ugly native input */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+    background-color: #996515;          /* golden brown */
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 20px;   /* Add space between Choose File and Process button */
+}
+
+.custom-file-upload:hover {
+    background-color: #704214;           /* Darker golden brown */
+}
+
+#file-chosen {
+    margin-left: 10px;   /* spacing from Choose File */
+    margin-right: 50px;  /* spacing before Process Image */
+    font-style: italic;
+    color: #333;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    color: red;
+}
+
+.results-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;  /* Ensures container is wide enough for large images */
+    margin: 0 auto;     /* Centers the container */
+}
+
+.image-box {
+    text-align: center;
+    margin: 10px;       /* modify to change the spacing between images */
+}
+
+.image-box img {
+    max-width: 800px;         /* was 400 */
+    height: auto;             /* to ensure the aspect ratio is maintained as they scale up. */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+/* .instructions was here */
+
+
+footer {
+    text-align: center;
+    padding: 4px;   /* Reduced from 10px to make height shorter */
+    background-color: #007bff;     /* pure black #000000*/           /* was blueish #007bff */
+    color: white;                  /* was yellow */                     /* was white */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,83 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Image Water Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Satellite Image Water Segmentation</h1>
+        </div>
+    </header>
+    <main>
+        <section class="instructions">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Upload a multispectral .tif image using the button below.</li>
+                <li>The image will be processed to show an RGB approximation.</li>
+                <li>The model will generate a water segmentation mask (water in blue).</li>
+            </ol>
+        </section>
+
+        <section class="upload-section">
+            <form method="post" enctype="multipart/form-data">
+                <!-- the native file input code <input type="file" name="file" accept=".tif,.tiff" required> -->
+                <!-- a styled <label> as the button: below-->
+                <!-- Hidden input -->
+                <input type="file" id="file-upload" name="file" accept=".tif,.tiff" required hidden="">
+                <!-- Styled label acts as the button -->
+                <label for="file-upload" class="custom-file-upload">Choose File</label>
+                <!-- Span to show filename -->
+                 <span id="file-chosen">No file chosen</span>
+
+                <button type="submit">Process Image</button>
+                <!-- a styled <label> as the button: above-->
+            </form>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flash-messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </section>
+        {% if rgb_base64 or mask_base64 %}
+        <section class="results-section">
+            <h2>Results</h2>
+            <div class="image-container">
+                {% if rgb_base64 %}
+                <div class="image-box">
+                    <h3>Original Image (RGB Approximation)</h3>
+                    <img src="data:image/png;base64,{{ rgb_base64 }}" alt="RGB Image">
+                </div>
+                {% endif %}
+                {% if mask_base64 %}
+                <div class="image-box">
+                    <h3>Predicted Water Mask (Blue)</h3>
+                    <img src="data:image/png;base64,{{ mask_base64 }}" alt="Water Mask">
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; Water Segmentation App</p>
+    </footer>
+
+    <script>
+    const fileUpload = document.getElementById("file-upload");
+    const fileChosen = document.getElementById("file-chosen");
+
+    fileUpload.addEventListener("change", function(){
+        fileChosen.textContent = this.files.length > 0 ? this.files[0].name : "No file chosen";
+    });
+    </script>
+</body>
+</html>

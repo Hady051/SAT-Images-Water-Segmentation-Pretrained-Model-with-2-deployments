@@ -1,0 +1,6 @@
+flask
+torch
+numpy
+rasterio
+opencv-python
+segmentation-models-pytorch
