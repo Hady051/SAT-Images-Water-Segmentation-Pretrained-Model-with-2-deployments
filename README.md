@@ -51,7 +51,7 @@ An alternative deployment method is provided directly inside the Jupyter Noteboo
 
 ---
 
-## Pictures of the Flask, Html, CSS Deployment
+## Pictures of the Flask, Html and CSS Deployment
 
 <img width="1366" height="690" alt="Screenshot (1635)" src="https://github.com/user-attachments/assets/5d1da470-a605-4f1b-877e-656577c0dd7f" />
 
